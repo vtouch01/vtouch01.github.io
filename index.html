@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BridgeTech Solutions | IT Services for NYC Small Business — 桥科技</title>
+<meta name="description" content="Bilingual IT services for NYC small businesses. Web development, IT support, and software solutions, backed by an experienced overseas engineering team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0B1F3A;
+    --paper: #F7F4EC;
+    --lacquer: #C0392B;
+    --jade: #1E5C4F;
+    --stone: #8C8378;
+    --hairline: #E8E2D3;
+    --ink-soft: #16294A;
+    --paper-dim: #EFEADC;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body[lang-mode="zh"] .en { display: none; }
+  body[lang-mode="zh"] .zh { display: inline; }
+  body[lang-mode="en"] .en { display: inline; }
+  body[lang-mode="en"] .zh { display: none; }
+
+  body[lang-mode="zh"] .zh-block { display: block; }
+  body[lang-mode="en"] .zh-block { display: none; }
+  body[lang-mode="zh"] .en-block { display: none; }
+  body[lang-mode="en"] .en-block { display: block; }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', 'Noto Sans SC', serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.01em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,244,236,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 28px;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .logo .mark {
+    color: var(--lacquer);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink);
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible { opacity: 1; }
+
+  .lang-toggle {
+    display: flex;
+    border: 1px solid var(--ink);
+    border-radius: 20px;
+    overflow: hidden;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .lang-toggle button {
+    background: none;
+    border: none;
+    padding: 6px 14px;
+    cursor: pointer;
+    color: var(--ink);
+    font-family: inherit;
+  }
+  .lang-toggle button.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .lang-toggle button:focus-visible {
+    outline: 2px solid var(--lacquer);
+    outline-offset: -2px;
+  }
+
+  .nav-cta {
+    background: var(--lacquer);
+    color: var(--paper) !important;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 1 !important;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #a52f21; }
+
+  .burger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+  .burger span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 100px 0 0;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 28px 80px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lacquer);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--lacquer);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+    font-weight: 600;
+    line-height: 1.08;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 .accent { color: #E0A899; font-style: italic; font-weight: 500; }
+
+  .hero p.lede {
+    font-size: 1.08rem;
+    color: #C9D2E0;
+    max-width: 480px;
+    margin-bottom: 34px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--lacquer);
+    color: var(--paper);
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .btn-primary:hover { background: #a52f21; transform: translateY(-1px); }
+
+  .btn-ghost {
+    border: 1px solid rgba(247,244,236,0.35);
+    color: var(--paper);
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--paper); background: rgba(247,244,236,0.06); }
+
+  /* Bridge seam graphic — signature element */
+  .bridge-art {
+    position: relative;
+    height: 360px;
+  }
+
+  .bridge-svg { width: 100%; height: 100%; }
+
+  .seam-line {
+    stroke-dasharray: 6 6;
+    stroke: var(--lacquer);
+    animation: dash 30s linear infinite;
+  }
+  @keyframes dash { to { stroke-dashoffset: -1000; } }
+
+  .pulse-dot {
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; r: 3; }
+    50% { opacity: 1; r: 5; }
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid rgba(247,244,236,0.15);
+    background: rgba(0,0,0,0.15);
+  }
+
+  .hero-stats-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 28px 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .stat .num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--paper);
+  }
+  .stat .label {
+    font-size: 0.8rem;
+    color: #9DAAC2;
+    margin-top: 2px;
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section { padding: 90px 0; }
+
+  .section-head {
+    max-width: 620px;
+    margin-bottom: 56px;
+  }
+  .section-head .eyebrow { color: var(--jade); }
+  .section-head .eyebrow::before { background: var(--jade); }
+  .section-head h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .section-head p {
+    color: var(--stone);
+    margin-top: 14px;
+    font-size: 1.02rem;
+  }
+
+  /* ---------- SERVICES: bridge span layout ---------- */
+  .services-section { background: var(--paper); position: relative; }
+
+  .span-track {
+    position: relative;
+  }
+
+  .span-rail {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: repeating-linear-gradient(to right, var(--hairline) 0 8px, transparent 8px 14px);
+    z-index: 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-card {
+    padding: 0 22px;
+    border-right: 1px solid var(--hairline);
+  }
+  .service-card:last-child { border-right: none; }
+
+  .service-pier {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--lacquer);
+    margin-bottom: 22px;
+  }
+
+  .service-card h3 {
+    font-size: 1.12rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .service-card p {
+    font-size: 0.92rem;
+    color: var(--stone);
+    margin-bottom: 16px;
+  }
+
+  .service-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .service-card ul li {
+    font-size: 0.85rem;
+    color: var(--ink);
+    padding-left: 14px;
+    position: relative;
+  }
+  .service-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    background: var(--jade);
+    border-radius: 50%;
+  }
+
+  /* ---------- WHY / MODEL ---------- */
+  .model-section {
+    background: var(--ink-soft);
+    color: var(--paper);
+  }
+  .model-section .section-head .eyebrow { color: #E0A899; }
+  .model-section .section-head .eyebrow::before { background: #E0A899; }
+  .model-section .section-head h2 { color: var(--paper); }
+  .model-section .section-head p { color: #C9D2E0; }
+
+  .model-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .model-card {
+    background: rgba(247,244,236,0.04);
+    border: 1px solid rgba(247,244,236,0.12);
+    border-radius: 10px;
+    padding: 30px 26px;
+  }
+
+  .model-card .icon-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--lacquer);
+    margin-bottom: 14px;
+  }
+
+  .model-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .model-card p {
+    font-size: 0.9rem;
+    color: #C9D2E0;
+  }
+
+  /* ---------- WORK / PORTFOLIO ---------- */
+  .work-section { background: var(--paper); }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .work-card {
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .work-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(11,31,58,0.08); }
+
+  .work-thumb {
+    height: 160px;
+    background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .work-thumb.alt { background: linear-gradient(135deg, var(--jade) 0%, #15453b 100%); }
+
+  .work-thumb-label {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    color: rgba(247,244,236,0.9);
+    font-weight: 500;
+    z-index: 1;
+  }
+
+  .work-body { padding: 22px 24px 24px; }
+
+  .work-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--lacquer);
+    margin-bottom: 8px;
+  }
+
+  .work-body h3 {
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .work-body p {
+    font-size: 0.88rem;
+    color: var(--stone);
+    margin-bottom: 14px;
+  }
+
+  .work-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--jade);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .work-link:hover { text-decoration: underline; }
+
+  /* ---------- PROCESS ---------- */
+  .process-section { background: var(--paper-dim); }
+
+  .process-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .process-row {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 24px;
+    padding: 26px 0;
+    border-top: 1px solid var(--hairline);
+    align-items: baseline;
+  }
+  .process-row:last-child { border-bottom: 1px solid var(--hairline); }
+
+  .process-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    color: var(--lacquer);
+    font-weight: 600;
+  }
+
+  .process-row h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .process-row p {
+    font-size: 0.9rem;
+    color: var(--stone);
+    max-width: 560px;
+  }
+
+  /* ---------- COMMUNITY STRIP ---------- */
+  .community-strip {
+    background: var(--lacquer);
+    color: var(--paper);
+    padding: 56px 0;
+    text-align: center;
+  }
+  .community-strip h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .community-strip p {
+    color: #F4D9D2;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 0.96rem;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-section { background: var(--ink); color: var(--paper); }
+  .contact-section .section-head .eyebrow { color: #E0A899; }
+  .contact-section .section-head .eyebrow::before { background: #E0A899; }
+  .contact-section .section-head h2 { color: var(--paper); }
+  .contact-section .section-head p { color: #C9D2E0; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+  }
+
+  .contact-info-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .contact-info-item .ci-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--lacquer-light, #E0A899);
+    margin-bottom: 4px;
+  }
+  .contact-info-item .ci-value {
+    font-size: 0.98rem;
+    color: var(--paper);
+  }
+  .contact-info-item .ci-value.dim { color: #C9D2E0; }
+
+  form.contact-form {
+    background: rgba(247,244,236,0.04);
+    border: 1px solid rgba(247,244,236,0.14);
+    border-radius: 12px;
+    padding: 32px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #C9D2E0;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    background: rgba(247,244,236,0.06);
+    border: 1px solid rgba(247,244,236,0.2);
+    border-radius: 6px;
+    padding: 11px 13px;
+    color: var(--paper);
+    font-family: inherit;
+    font-size: 0.92rem;
+  }
+  .field input::placeholder, .field textarea::placeholder { color: #6E7C97; }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: 2px solid var(--lacquer);
+    outline-offset: 1px;
+    border-color: var(--lacquer);
+  }
+  .field textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--lacquer);
+    color: var(--paper);
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: inherit;
+  }
+  .form-submit:hover { background: #a52f21; }
+  .form-submit:focus-visible { outline: 2px solid var(--paper); outline-offset: 2px; }
+
+  .form-note {
+    font-size: 0.78rem;
+    color: #6E7C97;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .form-success {
+    display: none;
+    background: rgba(30,92,79,0.18);
+    border: 1px solid var(--jade);
+    color: #B7E0D5;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+  .form-success.show { display: block; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(247,244,236,0.1);
+    padding: 28px 0;
+    color: #6E7C97;
+    font-size: 0.82rem;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a:hover { color: var(--paper); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 920px) {
+    .nav-links { display: none; }
+    .burger { display: block; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .bridge-art { height: 220px; order: -1; }
+    .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .service-card { border-right: none; border-bottom: 1px solid var(--hairline); padding: 0 0 24px; margin-bottom: 24px;}
+    .service-card:nth-child(even) { border-left: 1px solid var(--hairline); padding-left: 22px; }
+    .span-rail { display: none; }
+    .model-grid { grid-template-columns: 1fr; }
+    .work-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding-top: 84px; }
+    .hero h1 { font-size: 2rem; }
+    .hero-stats-inner { grid-template-columns: 1fr 1fr; gap: 16px;}
+    section { padding: 64px 0; }
+  }
+</style>
+</head>
+<body lang-mode="en">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo"><span class="mark">桥</span> <span class="en">BridgeTech Solutions</span><span class="zh">桥科技</span></div>
+    <div class="nav-links">
+      <a href="#services"><span class="en">Services</span><span class="zh">服务</span></a>
+      <a href="#work"><span class="en">Our Work</span><span class="zh">案例</span></a>
+      <a href="#process"><span class="en">Process</span><span class="zh">流程</span></a>
+      <a href="#contact"><span class="en">Contact</span><span class="zh">联系我们</span></a>
+      <div class="lang-toggle">
+        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="#contact" class="nav-cta"><span class="en">Get a Free Quote</span><span class="zh">免费咨询</span></a>
+    </div>
+    <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display='flex'">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow"><span class="en">IT Services · NYC</span><span class="zh">IT 服务 · 纽约</span></div>
+      <h1>
+        <span class="en">Your business runs<br>on technology.<br><span class="accent">We make sure it works.</span></span>
+        <span class="zh">您的生意离不开科技。<br><span class="accent">我们让它稳定运行。</span></span>
+      </h1>
+      <p class="lede">
+        <span class="en">BridgeTech Solutions provides web development, software, and IT support to small businesses across NYC's Chinese community — backed by an experienced engineering team, with bilingual service every step of the way.</span>
+        <span class="zh">桥科技为纽约华人社区的中小企业提供网站开发、软件与IT支持服务。我们拥有经验丰富的技术团队，全程提供中英双语服务。</span>
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary"><span class="en">Get a Free Consultation</span><span class="zh">预约免费咨询</span></a>
+        <a href="#work" class="btn-ghost"><span class="en">See Our Work</span><span class="zh">查看案例</span></a>
+      </div>
+    </div>
+
+    <div class="bridge-art">
+      <svg class="bridge-svg" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a bridge connecting two sides, representing the company's role connecting clients with development resources">
+        <!-- left tower -->
+        <rect x="40" y="60" width="10" height="240" fill="#2A4366"/>
+        <!-- right tower -->
+        <rect x="350" y="60" width="10" height="240" fill="#2A4366"/>
+        <!-- deck -->
+        <line x1="20" y1="220" x2="380" y2="220" stroke="#2A4366" stroke-width="6"/>
+        <!-- seam line (signature, animated) -->
+        <path class="seam-line" d="M45 95 C 140 180, 260 180, 355 95" stroke-width="2" fill="none"/>
+        <path class="seam-line" d="M45 130 C 140 210, 260 210, 355 130" stroke-width="2" fill="none" style="animation-delay:-4s; opacity:0.6"/>
+        <!-- cables -->
+        <g stroke="#3C5A82" stroke-width="1.5">
+          <line x1="80" y1="220" x2="45" y2="100"/>
+          <line x1="120" y1="220" x2="80" y2="135"/>
+          <line x1="160" y1="220" x2="140" y2="165"/>
+          <line x1="200" y1="220" x2="200" y2="185"/>
+          <line x1="240" y1="220" x2="260" y2="165"/>
+          <line x1="280" y1="220" x2="320" y2="135"/>
+          <line x1="320" y1="220" x2="355" y2="100"/>
+        </g>
+        <!-- pulse nodes representing data flow -->
+        <circle class="pulse-dot" cx="45" cy="98" r="4" fill="#C0392B"/>
+        <circle class="pulse-dot" cx="355" cy="98" r="4" fill="#1E5C4F" style="animation-delay:-1.2s"/>
+        <circle class="pulse-dot" cx="200" cy="183" r="3" fill="#E0A899" style="animation-delay:-0.6s"/>
+        <!-- left skyline (NYC) -->
+        <g fill="#16294A">
+          <rect x="0" y="240" width="14" height="80"/>
+          <rect x="16" y="200" width="12" height="120"/>
+          <rect x="30" y="260" width="10" height="60"/>
+        </g>
+        <!-- right skyline (abstracted, dev side) -->
+        <g fill="#16294A">
+          <rect x="362" y="250" width="12" height="70"/>
+          <rect x="376" y="215" width="14" height="105"/>
+          <rect x="392" y="270" width="8" height="50"/>
+        </g>
+        <!-- base line -->
+        <line x1="0" y1="320" x2="400" y2="320" stroke="#16294A" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="stat">
+        <div class="num">10+</div>
+        <div class="label"><span class="en">Years combined experience</span><span class="zh">团队从业年限</span></div>
+      </div>
+      <div class="stat">
+        <div class="num">2</div>
+        <div class="label"><span class="en">Languages spoken on every project</span><span class="zh">双语服务，全程沟通无障碍</span></div>
+      </div>
+      <div class="stat">
+        <div class="num">24/7</div>
+        <div class="label"><span class="en">Support availability</span><span class="zh">全天候技术支持</span></div>
+      </div>
+      <div class="stat">
+        <div class="num">NYC</div>
+        <div class="label"><span class="en">Based locally, building globally</span><span class="zh">立足纽约，连接全球资源</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section id="services" class="services-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="en">What We Do</span><span class="zh">服务项目</span></div>
+      <h2><span class="en">IT services built for small business</span><span class="zh">专为中小企业打造的IT服务</span></h2>
+      <p><span class="en">From a new website to ongoing IT support — we handle the technology so you can focus on running your business.</span><span class="zh">从全新网站到日常IT维护——我们负责技术，您专心经营生意。</span></p>
+    </div>
+
+    <div class="span-track">
+      <div class="span-rail"></div>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-pier"></div>
+          <h3><span class="en">Web Development</span><span class="zh">网站开发</span></h3>
+          <p><span class="en">Professional, mobile-friendly websites that bring in customers and build trust.</span><span class="zh">专业、移动端友好的网站，帮您吸引客户、建立信任。</span></p>
+          <ul>
+            <li><span class="en">Business & e-commerce sites</span><span class="zh">企业及电商网站</span></li>
+            <li><span class="en">Bilingual / multilingual sites</span><span class="zh">中英双语网站</span></li>
+            <li><span class="en">SEO-friendly builds</span><span class="zh">搜索引擎优化</span></li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-pier"></div>
+          <h3><span class="en">Software & App Development</span><span class="zh">软件与应用开发</span></h3>
+          <p><span class="en">Custom tools and apps that fit how your business actually works.</span><span class="zh">为您的业务量身定制的软件与应用工具。</span></p>
+          <ul>
+            <li><span class="en">Booking & ordering systems</span><span class="zh">预订与点单系统</span></li>
+            <li><span class="en">Internal business tools</span><span class="zh">企业内部管理工具</span></li>
+            <li><span class="en">Mobile apps</span><span class="zh">移动应用开发</span></li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-pier"></div>
+          <h3><span class="en">IT Support & Maintenance</span><span class="zh">IT支持与维护</span></h3>
+          <p><span class="en">Reliable, responsive help when your systems need attention.</span><span class="zh">系统出现问题时，提供及时可靠的技术支持。</span></p>
+          <ul>
+            <li><span class="en">Network & hardware setup</span><span class="zh">网络与硬件配置</span></li>
+            <li><span class="en">Troubleshooting & repairs</span><span class="zh">故障排查与维修</span></li>
+            <li><span class="en">Ongoing maintenance plans</span><span class="zh">长期维护服务套餐</span></li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-pier"></div>
+          <h3><span class="en">Cloud & Data Solutions</span><span class="zh">云端与数据解决方案</span></h3>
+          <p><span class="en">Keep your business data secure, organized, and accessible.</span><span class="zh">保障数据安全、有序、随时可用。</span></p>
+          <ul>
+            <li><span class="en">Cloud migration & backup</span><span class="zh">云端迁移与数据备份</span></li>
+            <li><span class="en">POS & payment integration</span><span class="zh">收银与支付系统集成</span></li>
+            <li><span class="en">Email & file systems</span><span class="zh">邮件与文件管理系统</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY / MODEL -->
+<section class="model-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="en">Why BridgeTech</span><span class="zh">选择桥科技的理由</span></div>
+      <h2><span class="en">Local trust, global resources</span><span class="zh">本地信任，全球资源</span></h2>
+      <p><span class="en">We're based here in NYC and speak your language — but our engineering team gives you the scale and pricing of a much larger company.</span><span class="zh">我们立足纽约，沟通无障碍——同时我们的技术团队能为您提供大公司级别的资源与更具竞争力的价格。</span></p>
+    </div>
+
+    <div class="model-grid">
+      <div class="model-card">
+        <div class="icon-tag"><span class="en">Local</span><span class="zh">本地服务</span></div>
+        <h3><span class="en">A team that speaks your language</span><span class="zh">无障碍沟通的本地团队</span></h3>
+        <p><span class="en">Meet with us in person or on a call, in English or Mandarin. No miscommunication, no guessing what you need.</span><span class="zh">我们可以中文或英文与您当面或电话沟通，准确理解您的需求，不会出现误解。</span></p>
+      </div>
+      <div class="model-card">
+        <div class="icon-tag"><span class="en">Global</span><span class="zh">全球资源</span></div>
+        <h3><span class="en">Backed by an experienced dev team</span><span class="zh">背靠经验丰富的开发团队</span></h3>
+        <p><span class="en">Our overseas engineering partners have built platforms for biotech, e-commerce, and more — that same skill, applied to your business.</span><span class="zh">我们的海外技术团队已为生物科技、电商等多个行业搭建过成熟平台——同样的专业能力，将用于您的项目。</span></p>
+      </div>
+      <div class="model-card">
+        <div class="icon-tag"><span class="en">Value</span><span class="zh">性价比</span></div>
+        <h3><span class="en">Enterprise quality, small business pricing</span><span class="zh">企业级品质，中小企业价格</span></h3>
+        <p><span class="en">Our delivery model keeps costs down without cutting corners — so a small business can afford the same quality as a much bigger one.</span><span class="zh">我们的服务模式在保证质量的同时控制成本——让中小企业也能享受大公司级别的技术品质。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="work-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="en">Our Work</span><span class="zh">项目案例</span></div>
+      <h2><span class="en">Trusted by growing companies</span><span class="zh">深受成长型企业信赖</span></h2>
+      <p><span class="en">A few of the platforms our team has designed and built.</span><span class="zh">以下是我们团队设计开发的部分项目展示。</span></p>
+    </div>
+
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-thumb">
+          <div class="work-thumb-label">iLinkBio</div>
+        </div>
+        <div class="work-body">
+          <div class="work-tag"><span class="en">Biotech Platform</span><span class="zh">生物科技平台</span></div>
+          <h3><span class="en">iLinkBio — Research Services Site</span><span class="zh">iLinkBio — 科研服务网站</span></h3>
+          <p><span class="en">A full multi-page platform for a biotech research services company, with product catalogs and service pages.</span><span class="zh">为生物科技研发服务公司打造的多页面平台，包含产品目录与服务详情页。</span></p>
+          <a href="https://i-linkbio.com/human-ipsc-derived-organoid-platform" target="_blank" rel="noopener" class="work-link"><span class="en">Visit site</span><span class="zh">查看网站</span> →</a>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-thumb alt">
+          <div class="work-thumb-label">Boston BioSupplies</div>
+        </div>
+        <div class="work-body">
+          <div class="work-tag"><span class="en">E-Commerce</span><span class="zh">电子商务</span></div>
+          <h3><span class="en">Boston BioSupplies — Online Storefront</span><span class="zh">Boston BioSupplies — 在线商城</span></h3>
+          <p><span class="en">An e-commerce platform for laboratory equipment and supplies, with product search and ordering.</span><span class="zh">为实验室设备与耗材打造的电商平台，支持产品搜索与在线下单。</span></p>
+          <a href="https://bostonbiosupplies.com/" target="_blank" rel="noopener" class="work-link"><span class="en">Visit site</span><span class="zh">查看网站</span> →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="en">How It Works</span><span class="zh">合作流程</span></div>
+      <h2><span class="en">From first call to launch</span><span class="zh">从初次沟通到项目上线</span></h2>
+    </div>
+
+    <div class="process-list">
+      <div class="process-row">
+        <div class="process-num">01</div>
+        <div>
+          <h3><span class="en">Free consultation</span><span class="zh">免费咨询</span></h3>
+          <p><span class="en">We meet (in person, by phone, or video) to understand what your business actually needs — no jargon, no pressure.</span><span class="zh">我们通过面谈、电话或视频沟通，了解您业务的真实需求——没有专业术语，没有压力推销。</span></p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">02</div>
+        <div>
+          <h3><span class="en">Simple proposal & quote</span><span class="zh">简明提案与报价</span></h3>
+          <p><span class="en">You get a clear plan and price in plain language, in English or Chinese — no hidden fees.</span><span class="zh">您将收到一份用通俗语言写成的清晰方案与报价（中英文均可），没有隐藏费用。</span></p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">03</div>
+        <div>
+          <h3><span class="en">Build & review</span><span class="zh">开发与审核</span></h3>
+          <p><span class="en">Our local team manages the project while our engineers build it — you see progress and give feedback along the way.</span><span class="zh">本地团队全程管理项目，技术团队负责开发——您可以随时查看进度并提出反馈。</span></p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">04</div>
+        <div>
+          <h3><span class="en">Launch & ongoing support</span><span class="zh">上线及后续支持</span></h3>
+          <p><span class="en">We launch your project and stay available for support, updates, and questions — long after the handoff.</span><span class="zh">项目上线后，我们将持续提供技术支持、系统更新及答疑服务。</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY STRIP -->
+<div class="community-strip">
+  <h2><span class="en">Proudly serving NYC's Chinese business community</span><span class="zh">荣幸为纽约华人商业社区提供服务</span></h2>
+  <p><span class="en">We understand the language, the culture, and the way you do business — because we're part of this community too.</span><span class="zh">我们了解您的语言、文化与经营方式——因为我们也是这个社区的一部分。</span></p>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="en">Get In Touch</span><span class="zh">联系我们</span></div>
+      <h2><span class="en">Let's talk about your business</span><span class="zh">让我们了解您的业务需求</span></h2>
+      <p><span class="en">Tell us a bit about what you need. We'll get back to you within one business day.</span><span class="zh">请简单介绍您的需求，我们将在一个工作日内回复您。</span></p>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-item">
+          <div>
+            <div class="ci-label"><span class="en">Email</span><span class="zh">邮箱</span></div>
+            <div class="ci-value">info@bridgetech-solutions.com</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div>
+            <div class="ci-label"><span class="en">Phone / WeChat</span><span class="zh">电话 / 微信</span></div>
+            <div class="ci-value">(555) 012-3456</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div>
+            <div class="ci-label"><span class="en">Based In</span><span class="zh">公司地址</span></div>
+            <div class="ci-value dim"><span class="en">New York City, NY</span><span class="zh">美国纽约市</span></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div>
+            <div class="ci-label"><span class="en">Languages</span><span class="zh">服务语言</span></div>
+            <div class="ci-value dim"><span class="en">English · Mandarin</span><span class="zh">英语 · 中文</span></div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-success" id="formSuccess">
+          <span class="en">Thanks! Your message has been sent — we'll be in touch within one business day.</span>
+          <span class="zh">感谢您的留言！我们将在一个工作日内与您联系。</span>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="name"><span class="en">Name</span><span class="zh">姓名</span></label>
+            <input type="text" id="name" name="name" required placeholder="Jane Lee">
+          </div>
+          <div class="field">
+            <label for="business"><span class="en">Business Name</span><span class="zh">公司/店铺名称</span></label>
+            <input type="text" id="business" name="business" placeholder="">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="email"><span class="en">Email</span><span class="zh">邮箱</span></label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="phone"><span class="en">Phone</span><span class="zh">电话</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="service"><span class="en">What do you need help with?</span><span class="zh">您需要哪方面的帮助？</span></label>
+          <select id="service" name="service">
+            <option value="website"><span class="en">Website / Web Development</span></option>
+            <option value="software">Software / App Development</option>
+            <option value="support">IT Support & Maintenance</option>
+            <option value="cloud">Cloud & Data Solutions</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message"><span class="en">Tell us about your project</span><span class="zh">请简单描述您的需求</span></label>
+          <textarea id="message" name="message" placeholder="What can we help you with?"></textarea>
+        </div>
+
+        <button type="submit" class="form-submit"><span class="en">Send Message</span><span class="zh">提交留言</span></button>
+        <p class="form-note"><span class="en">We respond within one business day, in English or Chinese.</span><span class="zh">我们将在一个工作日内以中文或英文回复您。</span></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>© 2026 BridgeTech Solutions <span class="zh">桥科技</span>. <span class="en">All rights reserved.</span><span class="zh">版权所有。</span></div>
+    <div class="footer-links">
+      <a href="#services"><span class="en">Services</span><span class="zh">服务</span></a>
+      <a href="#work"><span class="en">Work</span><span class="zh">案例</span></a>
+      <a href="#contact"><span class="en">Contact</span><span class="zh">联系</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(mode) {
+    document.body.setAttribute('lang-mode', mode);
+    document.getElementById('btn-en').classList.toggle('active', mode === 'en');
+    document.getElementById('btn-zh').classList.toggle('active', mode === 'zh');
+  }
+
+  // Contact form — replace this action with Formspree/Web3Forms endpoint when deploying
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('formSuccess').classList.add('show');
+    this.reset();
+    // TODO: When deploying, point this form at a Formspree or Web3Forms endpoint,
+    // or use Netlify Forms (add netlify attribute to the <form> tag) for real submissions.
+  });
+</script>
+
+</body>
+</html>
